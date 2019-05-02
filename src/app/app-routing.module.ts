@@ -9,9 +9,10 @@ import { PartyComponent } from './components/party/party.component';
 export const routes: Routes = [
   { path: '', redirectTo: 'main', pathMatch: 'full' },
   { path: 'main', component: MainComponent },
+  { path: 'party',  component: PartyComponent },
  /* { path: 'createCampaign',  component: CreateCampaignComponent },
   { path: 'loginCampaign',  component: LoginCampaignComponent },
-  { path: 'party',  component: PartyComponent },
+  
   { path: 'createCharacter',  component: CreateCharacterComponent }*/
 ];
  
