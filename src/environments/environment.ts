@@ -7,4 +7,4 @@ export const environment = {
   production: false
 };
 
-export const HERO_URL = `http://localhost:8088/SpringSampleMVC/`;
+export const HERO_URL = `http://localhost:8088/DnDPlatform/`;
