@@ -15,6 +15,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { AllComponent } from './components/all/all.component';
 import { FindComponent } from './components/find/find.component';
 import { PartyComponent } from './components/party/party.component';
+import { LoginComponent } from './components/login/login.component';
 
 //Http Client
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
@@ -22,6 +23,7 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 //Services
 import { HeroService } from './services/hero.service';
 import { CustomInterceptor } from './session/custom-interceptor';
+
 
 @NgModule({
   declarations: [
@@ -31,7 +33,8 @@ import { CustomInterceptor } from './session/custom-interceptor';
     RegisterComponent,
     AllComponent,
     FindComponent,
-    PartyComponent
+    PartyComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

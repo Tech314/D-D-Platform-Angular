@@ -5,15 +5,16 @@ import { RouterModule, Routes } from '@angular/router';
 // Components
 import { MainComponent } from './components/main/main.component';
 import { PartyComponent } from './components/party/party.component';
+import { LoginComponent } from './components/login/login.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'main', pathMatch: 'full' },
   { path: 'main', component: MainComponent },
   { path: 'party',  component: PartyComponent },
- /* { path: 'createCampaign',  component: CreateCampaignComponent },
-  { path: 'loginCampaign',  component: LoginCampaignComponent },
+ // { path: 'createCampaign',  component: CreateCampaignComponent },
+  { path: 'loginCampaign',  component: LoginComponent },
   
-  { path: 'createCharacter',  component: CreateCharacterComponent }*/
+ // { path: 'createCharacter',  component: CreateCharacterComponent }
 ];
  
 @NgModule({
