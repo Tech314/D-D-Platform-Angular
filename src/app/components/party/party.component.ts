@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PartyComponent implements OnInit {
 
+  title = 'Your Campaign';
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  public diceRoll: number = 0;
+
+  public roll(dice:number) : void {
+    
   }
 
 }

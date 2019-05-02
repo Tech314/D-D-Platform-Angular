@@ -1,7 +1,15 @@
 <div class="row">
     <div class="col-md-3">
         <div class="jumbotron">
-            Dice roll location
+            <div class="btn-group">
+                <button type="button" (click)="roll(4)">Roll d4</button>
+                <button type="button" (click)="roll(6)">Roll d6</button>
+                <button type="button" (click)="roll(8)">Roll d8</button>
+                <button type="button" (click)="roll(10)">Roll d10</button>
+                <button type="button" (click)="roll(12)">Roll d12</button>
+                <button type="button" (click)="roll(20)">Roll d20</button>
+                <button type="button" (click)="roll(100)">Roll d100</button>
+            </div>
         </div>
     </div>
     <div class="col-md-9">
