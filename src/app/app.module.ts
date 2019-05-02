@@ -14,7 +14,6 @@ import { MainComponent } from './components/main/main.component';
 import { RegisterComponent } from './components/register/register.component';
 import { AllComponent } from './components/all/all.component';
 import { FindComponent } from './components/find/find.component';
-import { PartyComponent } from './components/party/party.component';
 
 //Http Client
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
@@ -30,8 +29,7 @@ import { CustomInterceptor } from './session/custom-interceptor';
     MainComponent,
     RegisterComponent,
     AllComponent,
-    FindComponent,
-    PartyComponent
+    FindComponent
   ],
   imports: [
     BrowserModule,
