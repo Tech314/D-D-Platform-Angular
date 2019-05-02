@@ -30,7 +30,8 @@ import { CustomInterceptor } from './session/custom-interceptor';
     MainComponent,
     RegisterComponent,
     AllComponent,
-    FindComponent
+    FindComponent,
+    PartyComponent
   ],
   imports: [
     BrowserModule,
