@@ -22,6 +22,7 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
 //Services
 import { HeroService } from './services/hero.service';
+import { DiceService } from './services/dice.service';
 import { CustomInterceptor } from './session/custom-interceptor';
 
 
@@ -42,7 +43,8 @@ import { CustomInterceptor } from './session/custom-interceptor';
     FormsModule,
     HttpClientModule
   ],
-  providers: [HeroService, {
+  providers: [HeroService,
+    DiceService, {
     provide: HTTP_INTERCEPTORS,
     useClass: CustomInterceptor,
     multi: true
