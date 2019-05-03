@@ -1,4 +1,4 @@
-export class Characters { 
+export class Campaign { 
     campId: number;
     campName: string;
     campPass: string;
