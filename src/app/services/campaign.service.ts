@@ -9,9 +9,14 @@ export class CampaignService {
 
   constructor(private http:HttpClient) { }
 
-  public CampaignLogin(username:string,password:string): Observable<Campaign>{
-    return null;
+  public CampaignLogin(campaign: Campaign): Observable<Campaign> {
+    return this.http
+            .post(`${DND_URL}loginToCampaign`, campaign)
+            .catch(this.handleError);
+  }
 
+  private handleError(error: Response){
+    return Observable.throw(error.statusText);
   }
 
 }
