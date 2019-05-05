@@ -2,8 +2,8 @@
 
 <form (ngSubmit)="onSubmit()">
   <label for="username">Campaign Name</label>
-  <input type="text" /><br/>
-  <label for="password">Campaign Password</label>
+  <input type="text" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" /><br/>
+  <label for="password" > Campaign Password</label>
   <input type="text" /><br/>
   <input type="submit" value="Login"/>
 
