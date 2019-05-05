@@ -1,3 +1,5 @@
+<h1 class="text-center">{{campaign.campaignName}}</h1>
+
 <div class="row">
     <div class="col-md-3">
         <div class="jumbotron">
@@ -24,35 +26,46 @@
 
 <br>
 
+<button type="button" (click)="getCharacters()">Refresh Character List</button>
 <div class="row">
     <div class="col-md-2">
         <div class="jumbotron">
-            Character 1
+            Character 1 <br>
+            <div *ngIf="char1">
+                {{char1.charName}} <br>
+                {{char1.charLvl}}
+            </div>
+            <span *ngIf="!char1"><button type="button">Add Character(Not yet Implemented)</button></span>
         </div>
     </div>
     <div class="col-md-2">
         <div class="jumbotron">
             Character 2
+            <span *ngIf="!char2"><button type="button">Add Character(Not yet Implemented)</button></span>
         </div>
     </div>
     <div class="col-md-2">
         <div class="jumbotron">
             Character 3
+            <span *ngIf="!char3"><button type="button">Add Character(Not yet Implemented)</button></span>
         </div>
     </div>
     <div class="col-md-2">
         <div class="jumbotron">
             Character 4
+            <span *ngIf="!char4"><button type="button">Add Character(Not yet Implemented)</button></span>
         </div>
     </div>
     <div class="col-md-2">
         <div class="jumbotron">
             Character 5
+            <span *ngIf="!char5"><button type="button">Add Character(Not yet Implemented)</button></span>
         </div>
     </div>
     <div class="col-md-2">
         <div class="jumbotron">
             Character 6
+            <span *ngIf="!char6"><button type="button">Add Character(Not yet Implemented)</button></span>
         </div>
     </div>
 
