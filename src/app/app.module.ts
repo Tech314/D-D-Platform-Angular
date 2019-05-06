@@ -24,6 +24,7 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { HeroService } from './services/hero.service';
 import { DiceService } from './services/dice.service';
 import { CustomInterceptor } from './session/custom-interceptor';
+import { CampaignService } from './services/campaign.service';
 
 
 @NgModule({
@@ -44,6 +45,7 @@ import { CustomInterceptor } from './session/custom-interceptor';
     HttpClientModule
   ],
   providers: [HeroService,
+    CampaignService,
     DiceService, {
     provide: HTTP_INTERCEPTORS,
     useClass: CustomInterceptor,

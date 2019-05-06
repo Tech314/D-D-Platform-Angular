@@ -1,27 +1,33 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { CampaignService } from '../../services/campaign.service';
+import { Campaign } from '../../models/campaign.model';
 import { Router } from '@angular/router';
-import { FormControl, FormGroup } from "@angular/forms";
+import { ClientMessage } from '../../models/client-message.model';
+
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
 
-  myForm: FormGroup;
+  constructor(private router:Router,private campaignService:CampaignService) { }
 
-  constructor(private router: Router) { }
+  public campaign:Campaign = new Campaign(0,"","",0,0,0,0,0,0);
 
-  ngOnInit() {
-   // this.myForm = this.FormGroup({
-   //   'Email': new FormControl(null, [Validators.required]),
-    //  'Password': new FormControl(null, [Validators.required])
-   //  })
-  }
+  public campaignData:Campaign = new Campaign(0,"","",0,0,0,0,0,0);
 
-  onSubmit(){
-    this.router.navigate(['/party']);
+  public clientMessage: ClientMessage = new ClientMessage('');
+
+  onSubmit():void{
+    this.campaignService.CampaignLogin(this.campaign)
+    .subscribe(
+      data => this.campaignData = data,
+      error => this.clientMessage.message = 'invalid login credentials'
+      );
+     // this.router.navigate(['/party']);
+     
   }
 
 }
