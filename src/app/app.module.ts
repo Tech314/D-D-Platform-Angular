@@ -25,6 +25,7 @@ import { DiceService } from './services/dice.service';
 import { CampaignService } from './services/campaign.service';
 import { CustomInterceptor } from './session/custom-interceptor';
 import { CharactersService } from './services/characters.service';
+import { MonstersComponent } from './components/monsters/monsters.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { CharactersService } from './services/characters.service';
     RegisterComponent,
     AllComponent,
     FindComponent,
-    PartyComponent
+    PartyComponent,
+    MonstersComponent
   ],
   imports: [
     BrowserModule,

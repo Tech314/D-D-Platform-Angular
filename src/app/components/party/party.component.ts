@@ -32,6 +32,9 @@ export class PartyComponent implements OnInit {
   public dice: Dice;
   public dieRolled: String;
 
+//Array of previous Dice rolls
+  public diceRolls: Dice[] = [];
+
 //To hold current campaign info
   public campaign: Campaign = new Campaign(1,"","",0,0,0,0,0,0);
 
@@ -105,7 +108,13 @@ export class PartyComponent implements OnInit {
   private roll(diceInput: Dice) : void {
     this.diceService.roll(diceInput)
               .subscribe(
-                data => this.dice = data[0],
+                data => {
+                  this.dice = data[0];
+                  this.diceRolls.unshift(data[0]);
+                  if(this.diceRolls.length > 10){
+                    this.diceRolls.pop();
+                  }
+                },
                 error => this.clientMessage.message = error
               );
   }
