@@ -1,5 +1,5 @@
 import { SpecialAbilities } from "./special-abilities.model";
-import { Action } from "./action";
+import { Action } from "./action.model";
 import { LegendaryAction } from "./legendary-action.model";
 
 export class Monster {

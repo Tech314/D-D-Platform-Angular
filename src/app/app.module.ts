@@ -26,6 +26,7 @@ import { CampaignService } from './services/campaign.service';
 import { CustomInterceptor } from './session/custom-interceptor';
 import { CharactersService } from './services/characters.service';
 import { MonstersComponent } from './components/monsters/monsters.component';
+import { MonsterService } from './services/monster.service';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { MonstersComponent } from './components/monsters/monsters.component';
   providers: [HeroService,
     DiceService,
     CampaignService,
-    CharactersService, {
+    CharactersService,
+    MonsterService, {
     provide: HTTP_INTERCEPTORS,
     useClass: CustomInterceptor,
     multi: true

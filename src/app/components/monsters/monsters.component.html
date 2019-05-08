@@ -1,3 +1,46 @@
-<select *ngFor="let monster = monsterList">
-  <option>{{monster.name}}</option>
+<select [(ngModel)]="monster.url">
+  <option *ngFor="let monsterOption of monsterList" [value]="monsterOption.url">{{monsterOption.name}}</option>
 </select>
+<button type="button" (click)="getMonster()">Show Monster</button>
+
+<div class="container-fluid">
+  <div class="col-md-1"></div>
+  <div class="col-md-10">
+    <div class="panel panel-default">
+      <div>
+        <div class="panel-heading">
+          <a href="https://forgottenrealms.fandom.com/wiki/{{monster.name}}" target="_blank"><span class="label label-default label-center">{{monster.name}}</span></a>
+        </div>
+        <div class="panel-body" *ngIf="monster.name != ''">
+          <div class="col-md-2">
+            <h3 class="text-center">Attributes</h3>
+            Strength: {{monster.strength}}<br>
+            Dexterity: {{monster.dexterity}}<br>
+            Constitution: {{monster.constitution}}<br>
+            Intelligence: {{monster.intelligence}}<br>
+            Wisdom: {{monster.wisdom}}<br>
+            Charisma: {{monster.charisma}}<br>
+          </div>
+          <div class="col-md-5">
+            <h3 class="text-center">Actions</h3>
+            <div class="jumbotron" *ngFor="let action of actions">
+              <span *ngIf="action.name">{{action.name}}</span><br>
+              <span *ngIf="action.desc">Description: {{action.desc}}<br></span>
+              <span *ngIf="action.attack_bonus">Attack Bonus: {{action.attack_bonus}}<br></span>
+              <span *ngIf="action.damage_bonus">Damage Bonus: {{action.damage_bonus}}<br></span>
+              <span *ngIf="action.damage_dice">Damage Dice: {{action.damage_dice}}<br></span>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <h3 class="text-center">Legendary Actions</h3>
+            <div class="jumbotron" *ngFor="let legendaryAction of legendaryActions">
+              <span *ngIf="legendaryAction.name">{{legendaryAction.name}}</span><br>
+              <span *ngIf="legendaryAction.desc">Description: {{legendaryAction.desc}}<br></span>
+              <span *ngIf="legendaryAction.attack_bonus">Attack Bonus: {{legendaryAction.attack_bonus}}<br></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
