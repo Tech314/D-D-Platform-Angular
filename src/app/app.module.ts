@@ -15,6 +15,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { AllComponent } from './components/all/all.component';
 import { FindComponent } from './components/find/find.component';
 import { PartyComponent } from './components/party/party.component';
+import {CharactersComponent} from './components/characters/characters.component';
 
 //Http Client
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
@@ -37,7 +38,8 @@ import { MonsterService } from './services/monster.service';
     AllComponent,
     FindComponent,
     PartyComponent,
-    MonstersComponent
+    MonstersComponent,
+    CharactersComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +55,7 @@ import { MonsterService } from './services/monster.service';
     provide: HTTP_INTERCEPTORS,
     useClass: CustomInterceptor,
     multi: true
-  }],
+  }, CharactersComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

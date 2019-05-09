@@ -6,15 +6,17 @@ import { RouterModule, Routes } from '@angular/router';
 import { MainComponent } from './components/main/main.component';
 import { PartyComponent } from './components/party/party.component';
 import { MonstersComponent } from './components/monsters/monsters.component';
+import { CharactersComponent } from './components/characters/characters.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'main', pathMatch: 'full' },
   { path: 'main', component: MainComponent },
   { path: 'party',  component: PartyComponent },
-  { path: 'monster', component: MonstersComponent }
+  { path: 'monster', component: MonstersComponent },
+  { path: 'character', component: CharactersComponent }
  /* { path: 'createCampaign',  component: CreateCampaignComponent },
   { path: 'loginCampaign',  component: LoginCampaignComponent },
-  
+   
   { path: 'createCharacter',  component: CreateCharacterComponent }*/
 ];
  

@@ -1,0 +1,42 @@
+<div class = "panel panel-default">
+    <div>
+        <div class="panel-heading">
+            <span class="label label-default label-center">Character Creation</span>
+        </div>
+        <div class="panel-body">
+            <div class="col-md-3">
+                <h3 class="text-center">Race:</h3> 
+                <button type="button" (click)="getRace()">Random Race</button><br><br>
+                <input type="text" ng-model="race" value="{{character.race}}"/><br><br>   
+                <h3 class="text-center" >Gender:</h3>
+                <input type="text" ng-model="gender" value="{{character.gender}}"/><br><br>  
+                <h3 class="text-center">Name:</h3>
+                <button type="button" (click)="getName()">Random Name</button><br><br> 
+                <input type="text" ng-model="name" value="{{character.name}}"/><br><br>                                            
+                <h3 class="text-center">Class:</h3>
+                <button type="button" (click)="getClass()">Random Class</button><br><br>
+                <input type="text" ng-model="class" value="{{character.class}}"/><br>
+            </div>  
+            <div class="col-md-3">
+                <h3 class="text-center">Equipment:</h3>
+                <button type="button" (click)="getEquipment()">Class lvl1 Equipment</button><br><br> 
+                <textarea ng-model="equipment" rows="20" cols="40">{{character.equipment}}</textarea><br><br>                   
+            </div>
+            <div class="col-md-3">        
+                    <h3 class="text-center"> Skills/Spells:</h3> <br><br>
+                    <textarea ng-model="skills" rows="20" cols="40">{{character.skills}}</textarea>
+                </div>
+            <div class="col-md-3">
+                <h3 class="text-center">Ability Score:</h3>
+                <button type="button" (click)="getStats()">Random Ability</button><br><br>
+                Str: <input type="text" ng-model="Str" value="{{character.str}}"/><br><br>
+                Dex: <input type="text" ng-model="Dex" value="{{character.dex}}"/><br><br>
+                Con: <input type="text" ng-model="Con" value="{{character.con}}"/><br><br>
+                Int: <input type="text" ng-model="Int" value="{{character.int}}"/><br><br>
+                Wis: <input type="text" ng-model="Wis" value="{{character.wis}}"/><br><br>
+                Cha: <input type="text" ng-model="Cha" value="{{character.cha}}"/><br><br>
+        
+            </div>
+        </div>
+    </div>
+</div>
