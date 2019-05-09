@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CharactersService } from '../../services/Characters.service';
+import { CharactersService } from '../../services/characters.service';
 import { Characters } from '../../models/characters.model';
 import { ClientMessage } from '../../models/client-message.model';
 

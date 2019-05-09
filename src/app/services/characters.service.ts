@@ -17,23 +17,23 @@ export class CharactersService {
   }
 
 public getRace(): Observable<Characters>{
-  return this.http.get(`${DND_URL}characters/race`).catch(this.handleError);
+  return this.http.get(`${DND_URL}character/race`).catch(this.handleError);
 }
 
 public getName(): Observable<Characters>{
-  return this.http.get(`${DND_URL}characters/name`).catch(this.handleError);
+  return this.http.get(`${DND_URL}character/name`).catch(this.handleError);
 }
 
 public getClass(): Observable<Characters>{
-  return this.http.get(`${DND_URL}characters/class`).catch(this.handleError);
+  return this.http.get(`${DND_URL}character/class`).catch(this.handleError);
 }
 
 public getStats(): Observable<Characters>{
-  return this.http.get(`${DND_URL}characters/stats`).catch(this.handleError);
+  return this.http.get(`${DND_URL}character/stats`).catch(this.handleError);
 }
 
 public  getEquipment(classs : String): Observable<Characters>{
-  return this.http.post(`${DND_URL}characters/equipment`, classs).catch(this.handleError);
+  return this.http.post(`${DND_URL}character/equipment`, classs).catch(this.handleError);
 }
 
 private handleError(error: Response){
