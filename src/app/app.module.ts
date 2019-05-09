@@ -16,6 +16,7 @@ import { AllComponent } from './components/all/all.component';
 import { FindComponent } from './components/find/find.component';
 import { PartyComponent } from './components/party/party.component';
 import {CharactersComponent} from './components/characters/characters.component';
+import { SafePipe } from './pipes/safe.pipe';
 
 //Http Client
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
@@ -39,7 +40,8 @@ import { MonsterService } from './services/monster.service';
     FindComponent,
     PartyComponent,
     MonstersComponent,
-    CharactersComponent
+    CharactersComponent,
+    SafePipe
   ],
   imports: [
     BrowserModule,
