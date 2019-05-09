@@ -15,6 +15,7 @@ import { CharactersService } from '../../services/characters.service';
 export class PartyComponent implements OnInit {
  
   title = 'Your Campaign';
+  groupBoardUrl = '//www.groupboard.com/gb/769351';
 
   constructor(private diceService: DiceService,private campaignService: CampaignService
     ,private charactersService:CharactersService) { }
