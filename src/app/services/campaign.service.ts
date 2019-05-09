@@ -11,7 +11,7 @@ export class CampaignService {
 
   public CampaignLogin(campaign: Campaign): Observable<Campaign> {
     return this.http
-            .post(`${DND_URL}loginToCampaign`, campaign)
+            .post(`${DND_URL}campaign/loginToCampaign`, campaign)
             .catch(this.handleError);
   }
 

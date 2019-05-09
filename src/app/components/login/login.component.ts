@@ -20,14 +20,18 @@ export class LoginComponent {
 
   public clientMessage: ClientMessage = new ClientMessage('');
 
-  onSubmit():void{
+  campaignCreate():void{
     this.campaignService.CampaignLogin(this.campaign)
     .subscribe(
       data => this.campaignData = data,
       error => this.clientMessage.message = 'invalid login credentials'
-      );
-     // this.router.navigate(['/party']);
-     
+      );   
   }
+
+  onSubmit():void{
+    this.campaignCreate();
+    this.router.navigate(['/party']);
+  }
+
 
 }
