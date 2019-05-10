@@ -23,6 +23,24 @@ export class CampaignService {
     return this.http.post(`${DND_URL}campaign/register`,campaign).catch(this.handleError);
   }
 
+  public loginCampaign(campaign:Campaign): Observable<Campaign> {
+    return this.http.post(`${DND_URL}campaign/loginToCampaign`,campaign).catch(this.handleError);
+  }
+
+  //public authenticate(username,password): Observable<ClientMessage> {
+    
+  //}
+/*
+  isUserLoggedIn() {
+    let user = sessionStorage.getItem('username')
+    console.log(!(user === null))
+    return !(user === null)
+  }
+
+  logOut() {
+    sessionStorage.removeItem('username')
+  } */
+
   private handleError(error: Response){
     return Observable.throw(error.statusText);
   }

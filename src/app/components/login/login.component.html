@@ -2,9 +2,9 @@
 
 <form (ngSubmit)="onSubmit()">
   <label for="username">Campaign Name</label>
-  <input type="text" name="username"><br>
+  <input type="text" name="username" [(ngModel)]="username"><br>
   <label for="password" > Campaign Password</label>
-  <input type="password" name="password"/><br/>
+  <input type="password" name="password" [(ngModel)]="password"/><br/>
   <input type="submit" value="Login"/>
 
 </form>

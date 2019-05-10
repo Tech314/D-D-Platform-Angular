@@ -19,18 +19,28 @@ export class LoginComponent {
   public campaignData:Campaign = new Campaign(0,"","",0,0,0,0,0,0);
 
   public clientMessage: ClientMessage = new ClientMessage('');
+  
+  username = "";
+  password = "";
 
- /*  campaignCreate():void{
-    this.campaignService.CampaignLogin(this.campaign)
+  public campaignCreate(): void {
+    this.campaignService.loginCampaign(this.campaign)
     .subscribe(
       data => this.campaignData = data,
-      error => this.clientMessage.message = 'invalid login credentials'
-      );   
-  } */
+      error => this.clientMessage.message = 'SOMETHING WENT WRONG.'
+    );
+  }
 
-  onSubmit():void{
-   // this.campaignCreate();
-    this.router.navigate(['/party']);
+  onSubmit():void{   
+      this.campaignCreate();
+
+      var campName = this.campaignData.campaignName;
+      var campPass = this.campaignData.campaignPass;
+      if(this.username == campName && this.password == campPass){
+        this.router.navigate(['/party']);
+      }
+     
+
   }
 
 
