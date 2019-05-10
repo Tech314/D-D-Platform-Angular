@@ -1,5 +1,13 @@
 <h1 class="text-center">{{campaign.campaignName}}</h1>
 
+<br>
+<h4>*Dungeon Master Tools*</h4>
+<button type="button" (click)="showDMTool('Dice')">Dice Roll</button>
+<button type="button" (click)="showDMTool('Monster')">List of Monsters</button>
+<div *ngIf="showDMDice"></div>
+<div *ngIf="showDMMonster"><app-monsters></app-monsters></div>
+<br><br>
+
 <div class="row">
     <div class="col-md-3">
         <div class="jumbotron">
@@ -44,7 +52,7 @@
 <br>
 
 <h2>Player Notes *Not Saved Between Sessions*</h2>
-<textarea></textarea>
+<textarea cols="75%" rows=5></textarea>
 
 <br>
 

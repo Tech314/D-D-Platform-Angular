@@ -28,6 +28,10 @@ export class PartyComponent implements OnInit {
   }
 
   public clientMessage: ClientMessage = new ClientMessage('');
+
+//Variables for DM Tools
+public dmDice: boolean = false;
+public dmMonster: boolean = false;
   
 //To present Dice received from API
   public dice: Dice;
@@ -48,6 +52,25 @@ export class PartyComponent implements OnInit {
   public char4: Characters;
   public char5: Characters;
   public char6: Characters;
+
+  public showDMTool(value: string): void {
+    switch(value){
+      case "Dice":
+        if(this.dmMonster == true){
+          this.dmMonster = false;
+        }
+        this.dmDice = true;
+        break;
+      case "Monster":
+        if(this.dmDice == true){
+          this.dmDice = false;
+        }
+        this.dmMonster = true;
+        break;
+      default:
+        alert('Error showing DM Tools');
+    }
+  }
 
   public diceClick(sides: string): void {
     this.dieRolled = sides;
