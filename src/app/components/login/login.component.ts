@@ -19,12 +19,11 @@ export class LoginComponent {
   public campaignData:Campaign = new Campaign(0,"","",0,0,0,0,0,0);
 
   public clientMessage: ClientMessage = new ClientMessage('');
-  
-  username = "";
-  password = "";
 
+  public username:String;
+  public password:String;
   public campaignCreate(): void {
-    this.campaignService.loginCampaign(this.campaign)
+    this.campaignService.loginCampaign(this.username,this.password)
     .subscribe(
       data => this.campaignData = data,
       error => this.clientMessage.message = 'SOMETHING WENT WRONG.'
@@ -34,13 +33,7 @@ export class LoginComponent {
   onSubmit():void{   
       this.campaignCreate();
 
-      var campName = this.campaignData.campaignName;
-      var campPass = this.campaignData.campaignPass;
-      if(this.username == campName && this.password == campPass){
-        this.router.navigate(['/party']);
-      }
-     
-
+      //this.router.navigate(['/party']);
   }
 
 
