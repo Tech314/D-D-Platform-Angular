@@ -1,9 +1,9 @@
 export class Dice { 
-    name: string;
+    type: string;
     value: number;
 
-    constructor(name: string,value: number){
-        this.name = name;
+    constructor(type: string,value: number){
+        this.type = type;
         this.value = value;
     }
 }

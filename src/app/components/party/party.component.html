@@ -1,7 +1,9 @@
+<h1 class="text-center">{{campaign.campaignName}}</h1>
+
 <div class="row">
     <div class="col-md-3">
         <div class="jumbotron">
-            <div class="btn-group">
+            <div class="btn-group text-center">
                 <button type="button" (click)="diceClick('d4')">Roll d4</button>
                 <button type="button" (click)="diceClick('d6')">Roll d6</button>
                 <button type="button" (click)="diceClick('d8')">Roll d8</button>
@@ -11,48 +13,101 @@
                 <button type="button" (click)="diceClick('d100')">Roll d100</button>
             </div>
             <div *ngIf="dice">
-                Rolled a {{dieRolled}}, Result = {{dice.value}}
+                Rolled a {{dice.type}}, Result = {{dice.value}}
+            </div>
+            <div>
+                <h4 class="text-center">Previous 10 Rolls</h4>
+                <table class="table table-hover table-striped text-center">
+                    <thead>
+                        <tr>
+                            <th>Type</th>
+                            <th>Value</th>
+                        </tr>
+                    </thead>
+                    <tbody *ngFor="let die of diceRolls">
+                        <tr>
+                            <td>{{die.type}}</td>
+                            <td>{{die.value}}</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
     <div class="col-md-9">
         <div class="jumbotron">
-                <iframe src="//www.groupboard.com/gb/769351" width="100%" height="600" scrolling="no" frameborder="0"></iframe>
+                <iframe [src]="groupBoardUrl | safe" width="100%" height="600" scrolling="no" frameborder="0"></iframe>
         </div>
     </div>
 </div>
 
 <br>
 
+<h2>Player Notes *Not Saved Between Sessions*</h2>
+<textarea></textarea>
+
+<br>
+
+<button type="button" (click)="getCharacters()">Load/Refresh Character List</button>
 <div class="row">
     <div class="col-md-2">
         <div class="jumbotron">
-            Character 1
+            Character 1 <br>
+            <div *ngIf="char1">
+                {{char1.charName}} <br>
+                {{char1.charLvl}}
+            </div>
+            <span *ngIf="!char1"><button type="button">Add Character(Not yet Implemented)</button></span>
         </div>
     </div>
     <div class="col-md-2">
         <div class="jumbotron">
             Character 2
+            <div *ngIf="char2">
+                    {{char1.charName}} <br>
+                    {{char1.charLvl}}
+                </div>
+            <span *ngIf="!char2"><button type="button">Add Character(Not yet Implemented)</button></span>
         </div>
     </div>
     <div class="col-md-2">
         <div class="jumbotron">
             Character 3
+            <div *ngIf="char3">
+                    {{char1.charName}} <br>
+                    {{char1.charLvl}}
+                </div>
+            <span *ngIf="!char3"><button type="button">Add Character(Not yet Implemented)</button></span>
         </div>
     </div>
     <div class="col-md-2">
         <div class="jumbotron">
             Character 4
+            <div *ngIf="char4">
+                    {{char1.charName}} <br>
+                    {{char1.charLvl}}
+                </div>
+            <span *ngIf="!char4"><button type="button">Add Character(Not yet Implemented)</button></span>
         </div>
     </div>
     <div class="col-md-2">
         <div class="jumbotron">
             Character 5
+            <div *ngIf="char5">
+                    {{char1.charName}} <br>
+                    {{char1.charLvl}}
+                </div>
+            <span *ngIf="!char5"><button type="button">Add Character(Not yet Implemented)</button></span>
         </div>
     </div>
     <div class="col-md-2">
         <div class="jumbotron">
             Character 6
+            <div *ngIf="char6">
+                    {{char1.charName}} <br>
+                    {{char1.charLvl}}
+                </div>
+            <span *ngIf="!char6"><button type="button">Add Character(Not yet Implemented)</button></span>
         </div>
     </div>
 

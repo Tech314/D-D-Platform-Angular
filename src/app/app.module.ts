@@ -15,7 +15,12 @@ import { RegisterComponent } from './components/register/register.component';
 import { AllComponent } from './components/all/all.component';
 import { FindComponent } from './components/find/find.component';
 import { PartyComponent } from './components/party/party.component';
+<<<<<<< HEAD
 import { LoginComponent } from './components/login/login.component';
+=======
+import {CharactersComponent} from './components/characters/characters.component';
+import { SafePipe } from './pipes/safe.pipe';
+>>>>>>> 7102e631ee741b409bb6de8f8dfad2cd1643cdc9
 
 //Http Client
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
@@ -23,9 +28,16 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 //Services
 import { HeroService } from './services/hero.service';
 import { DiceService } from './services/dice.service';
+import { CampaignService } from './services/campaign.service';
 import { CustomInterceptor } from './session/custom-interceptor';
+<<<<<<< HEAD
 import { CampaignService } from './services/campaign.service';
 
+=======
+import { CharactersService } from './services/characters.service';
+import { MonstersComponent } from './components/monsters/monsters.component';
+import { MonsterService } from './services/monster.service';
+>>>>>>> 7102e631ee741b409bb6de8f8dfad2cd1643cdc9
 
 @NgModule({
   declarations: [
@@ -36,7 +48,13 @@ import { CampaignService } from './services/campaign.service';
     AllComponent,
     FindComponent,
     PartyComponent,
+<<<<<<< HEAD
     LoginComponent
+=======
+    MonstersComponent,
+    CharactersComponent,
+    SafePipe
+>>>>>>> 7102e631ee741b409bb6de8f8dfad2cd1643cdc9
   ],
   imports: [
     BrowserModule,
@@ -45,12 +63,19 @@ import { CampaignService } from './services/campaign.service';
     HttpClientModule
   ],
   providers: [HeroService,
+<<<<<<< HEAD
     CampaignService,
     DiceService, {
+=======
+    DiceService,
+    CampaignService,
+    CharactersService,
+    MonsterService, {
+>>>>>>> 7102e631ee741b409bb6de8f8dfad2cd1643cdc9
     provide: HTTP_INTERCEPTORS,
     useClass: CustomInterceptor,
     multi: true
-  }],
+  }, CharactersComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
