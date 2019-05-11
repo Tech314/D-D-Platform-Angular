@@ -17,11 +17,11 @@ export class CharactersComponent {
 
   public clientMessage: ClientMessage = new ClientMessage('');
   
-  public character: Characters = new Characters(0,"",0,0,"","","","","","","","","","","","");
+  public character: Characters = new Characters(0,"",0,0,"","","","","","","","","","","","","","");
   public race: String;
   public gender: String;
   public name: String;
-  public classs: String;
+  public classs: String ="";
   public equipment: String;
   public skills: String;
   public stats: String;
@@ -75,8 +75,8 @@ export class CharactersComponent {
   }
 
   private getEquipment(): void{
-    if (this.classs != ""){
-    this.characterService.getEquipment(this.classs)
+    if (this.character.charClass != ""){
+    this.characterService.getEquipment(this.character.charClass)
                     .subscribe(
                       data => this.character = data,
                       error => this.clientMessage.message = error

@@ -3,6 +3,8 @@ export class Characters {
     charName: string;
     charLvl: number;
     charExp: number;
+    charRace: string;
+    charClass: string;
     equipment: string;
     items: string;
     skills: string;
@@ -18,7 +20,7 @@ export class Characters {
 
     constructor(charId: number, charName: string, charLvl: number, charExp: number, equipment: string,
         items: string,skills: string, traits: string, stats: string, str: string, dex: string, con: string, int: string,
-        wis: string, cha: string, attackSpells: string){
+        wis: string, cha: string, attackSpells: string, charRace: string, charClass: string){
         this.charId = charId;
         this.charName = charName;
         this.charLvl = charLvl;
@@ -35,5 +37,7 @@ export class Characters {
         this.wis = wis;
         this.cha = cha;
         this.attackSpells = attackSpells;
+        this.charRace = charRace;
+        this.charClass = charClass;
     }
 }
