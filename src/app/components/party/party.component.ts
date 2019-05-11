@@ -45,7 +45,7 @@ public dmMonster: boolean = false;
 
 
 //To hold current character info
-  public char: Characters = new Characters(0,"",0,0,"","","","","","","","","","","","");
+  public char: Characters = new Characters(0,"",0,0,"","","","","","","","","","","","","","");
   public char1: Characters;
   public char2: Characters;
   public char3: Characters;
