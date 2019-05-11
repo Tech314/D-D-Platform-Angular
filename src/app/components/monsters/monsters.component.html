@@ -1,3 +1,45 @@
+<div class="row">
+    <div class="col-md-3">
+        <div class="jumbotron">
+            <div class="btn-group text-center">
+                <button type="button" (click)="diceClick('d4')">Roll d4</button>
+                <button type="button" (click)="diceClick('d6')">Roll d6</button>
+                <button type="button" (click)="diceClick('d8')">Roll d8</button>
+                <button type="button" (click)="diceClick('d10')">Roll d10</button>
+                <button type="button" (click)="diceClick('d12')">Roll d12</button>
+                <button type="button" (click)="diceClick('d20')">Roll d20</button>
+                <button type="button" (click)="diceClick('d100')">Roll d100</button>
+            </div>
+            <div *ngIf="dice">
+                Rolled a {{dice.type}}, Result = {{dice.value}}
+            </div>
+            <div>
+                <h4 class="text-center">Previous 10 Rolls</h4>
+                <table class="table table-hover table-striped text-center">
+                    <thead>
+                        <tr>
+                            <th>Type</th>
+                            <th>Value</th>
+                        </tr>
+                    </thead>
+                    <tbody *ngFor="let die of diceRolls">
+                        <tr>
+                            <td>{{die.type}}</td>
+                            <td>{{die.value}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-9">
+      <div class="jumbotron">
+        <iframe [src]="groupBoardUrl | safe" width="100%" height="600" scrolling="no" frameborder="0"></iframe>
+      </div>
+    </div>
+</div>
+
+
 <select [(ngModel)]="monster.url">
   <option *ngFor="let monsterOption of monsterList" [value]="monsterOption.url">{{monsterOption.name}}</option>
 </select>

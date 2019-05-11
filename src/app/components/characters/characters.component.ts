@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { CharactersService } from '../../services/characters.service';
 import { Characters } from '../../models/characters.model';
 import { ClientMessage } from '../../models/client-message.model';
+import { Router } from '@angular/router';
+import { LoadedRouterConfig } from '@angular/router/src/config';
 
 @Component({
   selector: 'app-characters',
@@ -11,9 +13,11 @@ import { ClientMessage } from '../../models/client-message.model';
 export class CharactersComponent {
 
   title = 'Character Sheet';
+  router: Router;
 
-
-  constructor(private characterService: CharactersService){ }
+  constructor(private characterService: CharactersService, router: Router){ 
+    this.router = router;
+  }
 
   public clientMessage: ClientMessage = new ClientMessage('');
   
@@ -73,6 +77,11 @@ export class CharactersComponent {
 
                       error => this.clientMessage.message = error
                     );
+  }
+
+  public saveCharacter(): void {
+    this.characterService.createCharacter(this.character);
+    this.router.navigate(["party", {param:1}]);
   }
 
   private getEquipment(): void{

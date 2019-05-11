@@ -16,7 +16,7 @@ export class CampaignService {
   }
 
   public findCampaign(campaign:Campaign): Observable<Campaign> {
-    return this.http.post(`${DND_URL}campaign/find`,campaign).catch(this.handleError);
+    return this.http.get(`${DND_URL}campaign/find`).catch(this.handleError);
   }
 
   public registerCampaign(campaign:Campaign): Observable<ClientMessage> {

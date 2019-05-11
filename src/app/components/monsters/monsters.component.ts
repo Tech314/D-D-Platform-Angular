@@ -6,6 +6,8 @@ import { ClientMessage } from '../../models/client-message.model';
 import { SpecialAbilities } from '../../models/special-abilities.model';
 import { Action } from '../../models/action.model';
 import { LegendaryAction } from '../../models/legendary-action.model';
+import { Dice } from '../../models/dice.model';
+import { DiceService } from '../../services/dice.service';
 
 @Component({
   selector: 'app-monsters',
@@ -14,13 +16,20 @@ import { LegendaryAction } from '../../models/legendary-action.model';
 })
 export class MonstersComponent implements OnInit {
 
-  constructor(private monsterService:MonsterService) { }
+  groupBoardUrl: string = 'http://www.groupboard.com/gb/769351';
+
+  constructor(private monsterService:MonsterService,private diceService:DiceService) { }
 
   ngOnInit() {
     this.getMonsters();
   }
 
   public clientMessage: ClientMessage = new ClientMessage('');
+
+  //To present Dice received from API
+  public dice: Dice;
+  public dieRolled: String;
+  public diceRolls: Dice[] = [];
 
   //To display monsters in dropdown select field
   public monsterList: MonsterResponse[] = [];
@@ -31,6 +40,24 @@ export class MonstersComponent implements OnInit {
   public legendaryActions: LegendaryAction[] = this.monster.legendary_actions;
   public specialAbilities: SpecialAbilities[] = this.monster.special_abilities;
 
+  public diceClick(sides: string): void {
+    this.dieRolled = sides;
+    this.roll(new Dice(sides,0));
+  }
+
+  private roll(diceInput: Dice) : void {
+    this.diceService.roll(diceInput)
+              .subscribe(
+                data => {
+                  this.dice = data[0];
+                  this.diceRolls.unshift(data[0]);
+                  if(this.diceRolls.length > 10){
+                    this.diceRolls.pop();
+                  }
+                },
+                error => this.clientMessage.message = error
+              );
+  }
 
   public getMonster(): void {
     this.monsterService.getMonster(this.monster).subscribe(

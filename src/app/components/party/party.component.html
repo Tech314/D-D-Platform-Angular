@@ -2,10 +2,7 @@
 
 <br>
 <h4>*Dungeon Master Tools*</h4>
-<button type="button" (click)="showDMTool('Dice')">Dice Roll</button>
-<button type="button" (click)="showDMTool('Monster')">List of Monsters</button>
-<div *ngIf="showDMDice"></div>
-<div *ngIf="showDMMonster"><app-monsters></app-monsters></div>
+<a routerLink="../dungeonmaster"><button type="button">To Dungeon Master View</button></a>
 <br><br>
 
 <div class="row">
@@ -58,64 +55,222 @@
 
 <button type="button" (click)="getCharacters()">Load/Refresh Character List</button>
 <div class="row">
-    <div class="col-md-2">
+    <div class="col-md-4">
         <div class="jumbotron">
-            Character 1 <br>
             <div *ngIf="char1">
-                {{char1.charName}} <br>
-                {{char1.charLvl}}
+                <div class="container-fluid">
+                    <div class="col-md-6">
+                        <strong>{{char1.charName}}</strong> <br>
+                        Level: <input type="text" [(ngModel)]="char1.charLvl" /><br>
+                        Race: {{char1.charRace}}<br>
+                        Class: {{char1.charClass}}<br>
+                        Experience: <input type="text" [(ngModel)]="char1.charExp" />
+                    </div>
+                    <div class="col-md-6">
+                        <strong>Attributes</strong><br>
+                        Strength: {{char1.str}}<br>
+                        Dexterity: {{char1.dex}}<br>
+                        Constitution: {{char1.con}}<br>
+                        Intelligence: {{char1.int}}<br>
+                        Wisdom: {{char1.wis}}<br>
+                        Charisma: {{char1.cha}}<br>
+                    </div> 
+                </div>
+                <br>
+                <div class="container-fluid">
+                    <div class="col-md-6">
+                        <strong>Equipment</strong> <br>
+                        <textarea [(ngModel)]="char1.equipment"></textarea>
+                    </div>
+                    <div class="col-md-6">
+                        <strong>Skill/Spells</strong><br>
+                        <textarea [(ngModel)]="char1.skills"></textarea>
+                    </div> 
+                </div> 
             </div>
-            <span *ngIf="!char1"><button type="button">Add Character(Not yet Implemented)</button></span>
+            <span *ngIf="!char1"><a routerLink="../character"><button type="button">Add Character</button></a></span>
         </div>
     </div>
-    <div class="col-md-2">
+    <div class="col-md-4">
         <div class="jumbotron">
-            Character 2
             <div *ngIf="char2">
-                    {{char1.charName}} <br>
-                    {{char1.charLvl}}
+            <div class="container-fluid">
+                    <div class="col-md-6">
+                        <strong>{{char2.charName}}</strong> <br>
+                        Level: <input type="text" [(ngModel)]="char2.charLvl" /><br>
+                        Race: {{char2.charRace}}<br>
+                        Class: {{char2.charClass}}<br>
+                        Experience: <input type="text" [(ngModel)]="char2.charExp" />
+                    </div>
+                    <div class="col-md-6">
+                        <strong>Attributes</strong><br>
+                        Strength: {{char2.str}}<br>
+                        Dexterity: {{char2.dex}}<br>
+                        Constitution: {{char2.con}}<br>
+                        Intelligence: {{char2.int}}<br>
+                        Wisdom: {{char2.wis}}<br>
+                        Charisma: {{char2.cha}}<br>
+                    </div> 
                 </div>
-            <span *ngIf="!char2"><button type="button">Add Character(Not yet Implemented)</button></span>
+                <br>
+                <div class="container-fluid">
+                    <div class="col-md-6">
+                        <strong>Equipment</strong> <br>
+                        <textarea [(ngModel)]="char2.equipment"></textarea>
+                    </div>
+                    <div class="col-md-6">
+                        <strong>Skill/Spells</strong><br>
+                        <textarea [(ngModel)]="char2.skills"></textarea>
+                    </div> 
+                </div> 
+            </div>
+            <span *ngIf="!char2"><a routerLink="../character"><button type="button">Add Character</button></a></span>
         </div>
     </div>
-    <div class="col-md-2">
+    <div class="col-md-4">
         <div class="jumbotron">
-            Character 3
             <div *ngIf="char3">
-                    {{char1.charName}} <br>
-                    {{char1.charLvl}}
+            <div class="container-fluid">
+                    <div class="col-md-6">
+                        <strong>{{char3.charName}}</strong> <br>
+                        Level: <input type="text" [(ngModel)]="char3.charLvl" /><br>
+                        Race: {{char3.charRace}}<br>
+                        Class: {{char3.charClass}}<br>
+                        Experience: <input type="text" [(ngModel)]="char3.charExp" />
+                    </div>
+                    <div class="col-md-6">
+                        <strong>Attributes</strong><br>
+                        Strength: {{char3.str}}<br>
+                        Dexterity: {{char3.dex}}<br>
+                        Constitution: {{char3.con}}<br>
+                        Intelligence: {{char3.int}}<br>
+                        Wisdom: {{char3.wis}}<br>
+                        Charisma: {{char3.cha}}<br>
+                    </div> 
                 </div>
-            <span *ngIf="!char3"><button type="button">Add Character(Not yet Implemented)</button></span>
+                <br>
+                <div class="container-fluid">
+                    <div class="col-md-6">
+                        <strong>Equipment</strong> <br>
+                        <textarea [(ngModel)]="char3.equipment"></textarea>
+                    </div>
+                    <div class="col-md-6">
+                        <strong>Skill/Spells</strong><br>
+                        <textarea [(ngModel)]="char3.skills"></textarea>
+                    </div> 
+                </div> 
+            </div>
+            <span *ngIf="!char3"><a routerLink="../character"><button type="button">Add Character</button></a></span>
         </div>
     </div>
-    <div class="col-md-2">
+</div>
+<div class="row">
+    <div class="col-md-4">
         <div class="jumbotron">
-            Character 4
             <div *ngIf="char4">
-                    {{char1.charName}} <br>
-                    {{char1.charLvl}}
+                <div class="container-fluid">
+                        <div class="col-md-6">
+                            <strong>{{char4.charName}}</strong> <br>
+                            Level: <input type="text" [(ngModel)]="char4.charLvl" /><br>
+                            Race: {{char4.charRace}}<br>
+                            Class: {{char4.charClass}}<br>
+                            Experience: <input type="text" [(ngModel)]="char4.charExp" />
+                        </div>
+                        <div class="col-md-6">
+                            <strong>Attributes</strong><br>
+                            Strength: {{char4.str}}<br>
+                            Dexterity: {{char4.dex}}<br>
+                            Constitution: {{char4.con}}<br>
+                            Intelligence: {{char4.int}}<br>
+                            Wisdom: {{char4.wis}}<br>
+                            Charisma: {{char4.cha}}<br>
+                        </div> 
+                    </div>
+                    <br>
+                    <div class="container-fluid">
+                        <div class="col-md-6">
+                            <strong>Equipment</strong> <br>
+                            <textarea [(ngModel)]="char4.equipment"></textarea>
+                        </div>
+                        <div class="col-md-6">
+                            <strong>Skill/Spells</strong><br>
+                            <textarea [(ngModel)]="char4.skills"></textarea>
+                        </div> 
+                    </div> 
                 </div>
-            <span *ngIf="!char4"><button type="button">Add Character(Not yet Implemented)</button></span>
+            <span *ngIf="!char4"><a routerLink="../character"><button type="button">Add Character</button></a></span>
         </div>
     </div>
-    <div class="col-md-2">
+    <div class="col-md-4">
         <div class="jumbotron">
-            Character 5
             <div *ngIf="char5">
-                    {{char1.charName}} <br>
-                    {{char1.charLvl}}
+                    <div class="container-fluid">
+                            <div class="col-md-6">
+                                <strong>{{char5.charName}}</strong> <br>
+                                Level: <input type="text" [(ngModel)]="char5.charLvl" /><br>
+                                Race: {{char5.charRace}}<br>
+                                Class: {{char5.charClass}}<br>
+                                Experience: <input type="text" [(ngModel)]="char5.charExp" />
+                            </div>
+                            <div class="col-md-6">
+                                <strong>Attributes</strong><br>
+                                Strength: {{char5.str}}<br>
+                                Dexterity: {{char5.dex}}<br>
+                                Constitution: {{char5.con}}<br>
+                                Intelligence: {{char5.int}}<br>
+                                Wisdom: {{char5.wis}}<br>
+                                Charisma: {{char5.cha}}<br>
+                            </div> 
+                        </div>
+                        <br>
+                        <div class="container-fluid">
+                            <div class="col-md-6">
+                                <strong>Equipment</strong> <br>
+                                <textarea [(ngModel)]="char5.equipment"></textarea>
+                            </div>
+                            <div class="col-md-6">
+                                <strong>Skill/Spells</strong><br>
+                                <textarea [(ngModel)]="char5.skills"></textarea>
+                            </div> 
+                        </div> 
                 </div>
-            <span *ngIf="!char5"><button type="button">Add Character(Not yet Implemented)</button></span>
+            <span *ngIf="!char5"><a routerLink="../character"><button type="button">Add Character</button></a></span>
         </div>
     </div>
-    <div class="col-md-2">
+    <div class="col-md-4">
         <div class="jumbotron">
-            Character 6
             <div *ngIf="char6">
-                    {{char1.charName}} <br>
-                    {{char1.charLvl}}
+                    <div class="container-fluid">
+                            <div class="col-md-6">
+                                <strong>{{char6.charName}}</strong> <br>
+                                Level: <input type="text" [(ngModel)]="char6.charLvl" /><br>
+                                Race: {{char1.charRace}}<br>
+                                Class: {{char1.charClass}}<br>
+                                Experience: <input type="text" [(ngModel)]="char6.charExp" />
+                            </div>
+                            <div class="col-md-6">
+                                <strong>Attributes</strong><br>
+                                Strength: {{char6.str}}<br>
+                                Dexterity: {{char6.dex}}<br>
+                                Constitution: {{char6.con}}<br>
+                                Intelligence: {{char6.int}}<br>
+                                Wisdom: {{char6.wis}}<br>
+                                Charisma: {{char6.cha}}<br>
+                            </div> 
+                        </div>
+                        <br>
+                        <div class="container-fluid">
+                            <div class="col-md-6">
+                                <strong>Equipment</strong> <br>
+                                <textarea [(ngModel)]="char6.equipment"></textarea>
+                            </div>
+                            <div class="col-md-6">
+                                <strong>Skill/Spells</strong><br>
+                                <textarea [(ngModel)]="char6.skills"></textarea>
+                            </div> 
+                        </div> 
                 </div>
-            <span *ngIf="!char6"><button type="button">Add Character(Not yet Implemented)</button></span>
+            <span *ngIf="!char6"><a routerLink="../character"><button type="button">Add Character</button></a></span>
         </div>
     </div>
 

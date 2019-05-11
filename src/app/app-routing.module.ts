@@ -12,7 +12,7 @@ export const routes: Routes = [
   { path: '', redirectTo: 'main', pathMatch: 'full' },
   { path: 'main', component: MainComponent },
   { path: 'party',  component: PartyComponent },
-  { path: 'monster', component: MonstersComponent },
+  { path: 'dungeonmaster', component: MonstersComponent },
   { path: 'character', component: CharactersComponent }
  /* { path: 'createCampaign',  component: CreateCampaignComponent },
   { path: 'loginCampaign',  component: LoginCampaignComponent },
