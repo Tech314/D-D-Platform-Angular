@@ -61,12 +61,13 @@ export class CharactersComponent {
                     .subscribe(
                       data => {
                         this.character = data;
-                        this.character.str = this.character.stats.substring(4,6);
-                        this.character.dex = this.character.stats.substring(10,12);
-                        this.character.con = this.character.stats.substring(16,18);
-                        this.character.int = this.character.stats.substring(22,24);
-                        this.character.wis = this.character.stats.substring(28,30);
-                        this.character.cha = this.character.stats.substring(34,36);
+                        let stats: string[] = this.character.stats.split(",",6);
+                        this.character.str = stats[0];
+                        this.character.dex = stats[1];
+                        this.character.con = stats[2];
+                        this.character.int = stats[3];
+                        this.character.wis = stats[4];
+                        this.character.cha = stats[5];
                       }
                       ,
 
