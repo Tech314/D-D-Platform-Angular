@@ -1,10 +1,12 @@
-<h2>Login to Campaign</h2>
-
+<div class="panel-heading">
+  <span class="label label-default label-center">Login to Campaign</span>
+</div>
 <form (ngSubmit)="onSubmit()">
   <label for="username">Campaign Name</label>
   <input type="text" name="username" [(ngModel)]="username"><br>
   <label for="password" > Campaign Password</label>
   <input type="password" name="password" [(ngModel)]="password"/><br/>
   <input type="submit" value="Login"/>
+  
 
 </form>

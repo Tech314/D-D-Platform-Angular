@@ -8,6 +8,7 @@ import { PartyComponent } from './components/party/party.component';
 import { MonstersComponent } from './components/monsters/monsters.component';
 import { CharactersComponent } from './components/characters/characters.component';
 import { LoginComponent } from './components/login/login.component';
+import { CreateCampaignComponent } from './components/register/register.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'main', pathMatch: 'full' },
@@ -15,7 +16,7 @@ export const routes: Routes = [
   { path: 'party',  component: PartyComponent },
   { path: 'monster', component: MonstersComponent },
   { path: 'character', component: CharactersComponent },
-  //{ path: 'createCampaign',  component: CreateCampaignComponent },
+  { path: 'createCampaign',  component: CreateCampaignComponent },
   { path: 'loginCampaign',  component: LoginComponent }
    
   //{ path: 'createCharacter',  component: CreateCharacterComponent }

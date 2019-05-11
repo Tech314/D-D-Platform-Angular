@@ -22,19 +22,14 @@ export class LoginComponent {
 
   public username:String;
   public password:String;
-  public campaignCreate(): void {
+
+  public onSubmit(): void {
     this.campaignService.loginCampaign(this.username,this.password)
     .subscribe(
       data => this.campaignData = data,
-      error => this.clientMessage.message = 'SOMETHING WENT WRONG.'
+      error => this.clientMessage.message = 'SOMETHING WENT WRONG.',
+      () => this.router.navigate(['/party'])
     );
   }
-
-  onSubmit():void{   
-      this.campaignCreate();
-
-      //this.router.navigate(['/party']);
-  }
-
 
 }
