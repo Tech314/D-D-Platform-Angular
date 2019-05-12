@@ -36,7 +36,7 @@
     </div>
     <div class="col-md-9">
         <div class="jumbotron">
-                <iframe src="{{groupBoardUrl}}" width="100%" height="600" scrolling="no" frameborder="0"></iframe>
+                <iframe [src]="groupBoardUrl | safe" width="100%" height="600" scrolling="no" frameborder="0"></iframe>
         </div>
     </div>
 </div>

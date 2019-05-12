@@ -7,34 +7,38 @@
             <div class="col-md-3">
                 <h3 class="text-center">Race:</h3> 
                 <button type="button" (click)="getRace()">Random Race</button><br><br>
-                <input type="text" ng-model="race" value="{{character.race}}"/><br><br>   
-                <h3 class="text-center" >Gender:</h3>
-                <input type="text" ng-model="gender" value="{{character.gender}}"/><br><br>  
-                <h3 class="text-center">Name:</h3>
+                <input type="text" [value]="character.charRace"/>
+                <a href="https://forgottenrealms.fandom.com/wiki/{{character.charRace}}" target="_blank"><i class="glyphicon glyphicon-question-sign"></i></a><br><br>
+                <h3 class="text-center">Name:</h3> 
                 <button type="button" (click)="getName()">Random Name</button><br><br> 
-                <input type="text" ng-model="name" value="{{character.name}}"/><br><br>                                            
+                <input type="text" [value]="character.charName"/><br><br>                                            
                 <h3 class="text-center">Class:</h3>
                 <button type="button" (click)="getClass()">Random Class</button><br><br>
+<<<<<<< HEAD
                 <input type="text" ng-model="class" value="{{character.charClass}}"/><br>
+=======
+                <input type="text" [value]="character.charClass"/>
+                <a href="https://forgottenrealms.fandom.com/wiki/{{character.charClass}}" target="_blank"><i class="glyphicon glyphicon-question-sign"></i></a><br>
+>>>>>>> 65022ebe8bfad45fa986fd3c64a5cc10310c1383
             </div>  
             <div class="col-md-3">
                 <h3 class="text-center">Equipment:</h3>
                 <button type="button" (click)="getEquipment()">Class lvl1 Equipment</button><br><br> 
-                <textarea ng-model="equipment" rows="20" cols="40">{{character.equipment}}</textarea><br><br>                   
+                <textarea rows="20" cols="40">{{character.equipment}}</textarea><br><br>                   
             </div>
             <div class="col-md-3">        
                     <h3 class="text-center"> Skills/Spells:</h3> <br><br>
                     <textarea ng-model="skills" rows="20" cols="40">{{character.skills}}</textarea>
                 </div>
             <div class="col-md-3">
-                <h3 class="text-center">Ability Score:</h3>
+                <h3 class="text-center">Ability Score: <a href="https://www.dandwiki.com/wiki/5e_SRD:Ability_Scores" target="_blank"><i class="glyphicon glyphicon-question-sign"></i></a></h3>
                 <button type="button" (click)="getStats()">Random Ability</button><br><br>
-                Str: <input type="text" ng-model="Str" value="{{character.str}}"/><br><br>
-                Dex: <input type="text" ng-model="Dex" value="{{character.dex}}"/><br><br>
-                Con: <input type="text" ng-model="Con" value="{{character.con}}"/><br><br>
-                Int: <input type="text" ng-model="Int" value="{{character.int}}"/><br><br>
-                Wis: <input type="text" ng-model="Wis" value="{{character.wis}}"/><br><br>
-                Cha: <input type="text" ng-model="Cha" value="{{character.cha}}"/><br><br>
+                Str: <input type="text" [value]="character.str"/><br><br>
+                Dex: <input type="text" [value]="character.dex"/><br><br>
+                Con: <input type="text" [value]="character.con"/><br><br>
+                Int: <input type="text" [value]="character.int"/><br><br>
+                Wis: <input type="text" [value]="character.wis"/><br><br>
+                Cha: <input type="text" [value]="character.cha"/><br><br>
         
             </div>
         </div>
