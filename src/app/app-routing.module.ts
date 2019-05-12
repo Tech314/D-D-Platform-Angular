@@ -17,9 +17,7 @@ export const routes: Routes = [
   { path: 'dungeonmaster', component: MonstersComponent },
   { path: 'character', component: CharactersComponent },
   { path: 'createCampaign',  component: CreateCampaignComponent },
-  { path: 'loginCampaign',  component: LoginComponent },
-   
-  //{ path: 'createCharacter',  component: CreateCharacterComponent }
+  { path: 'loginCampaign',  component: LoginComponent }
 ];
  
 @NgModule({

@@ -8,4 +8,3 @@ export const environment = {
 };
 
 export const DND_URL = `http://localhost:8088/DnDPlatform/`;
-export const HERO_URL = `http://localhost:8088/DnDPlatform/`;

@@ -11,8 +11,6 @@ import { AppRoutingModule }  from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavComponent } from './components/nav/nav.component';
 import { MainComponent } from './components/main/main.component';
-import { AllComponent } from './components/all/all.component';
-import { FindComponent } from './components/find/find.component';
 import { PartyComponent } from './components/party/party.component';
 import {CharactersComponent} from './components/characters/characters.component';
 import { SafePipe } from './pipes/safe.pipe';
@@ -23,7 +21,6 @@ import { CreateCampaignComponent } from './components/register/register.componen
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
 //Services
-import { HeroService } from './services/hero.service';
 import { DiceService } from './services/dice.service';
 import { CampaignService } from './services/campaign.service';
 import { CustomInterceptor } from './session/custom-interceptor';
@@ -38,8 +35,6 @@ import { MonsterService } from './services/monster.service';
     AppComponent,
     NavComponent,
     MainComponent,
-    AllComponent,
-    FindComponent,
     PartyComponent,
     MonstersComponent,
     CharactersComponent,
@@ -53,8 +48,7 @@ import { MonsterService } from './services/monster.service';
     FormsModule,
     HttpClientModule
   ],
-  providers: [HeroService,
-    DiceService,
+  providers: [DiceService,
     CampaignService,
     CharactersService,
     MonsterService, {
