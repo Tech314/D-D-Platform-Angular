@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { CampaignService } from '../../services/campaign.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav',
@@ -7,4 +9,14 @@ import { Component } from '@angular/core';
 })
 export class NavComponent {
 
+  constructor(private campaignService: CampaignService, private router: Router){}
+
+  public logout(): void {
+    this.campaignService.logout()
+                  .subscribe(
+                    data => window.alert(data.message),
+                    error => window.alert(error.message),
+                    () => this.router.navigate(['/main'])
+                  )
+  }
 }

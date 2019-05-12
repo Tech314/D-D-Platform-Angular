@@ -27,6 +27,10 @@ export class CampaignService {
     return this.http.post(`${DND_URL}campaign/loginToCampaign`,[username,password]).catch(this.handleError);
   }
 
+  public logout(): Observable<ClientMessage> {
+    return this.http.get(`${DND_URL}campaign/logout`).catch(this.handleError);
+  }
+
   private handleError(error: Response){
     return Observable.throw(error.statusText);
   }
