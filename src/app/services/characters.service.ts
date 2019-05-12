@@ -32,7 +32,7 @@ public getStats(): Observable<Characters>{
   return this.http.get(`${DND_URL}character/stats`).catch(this.handleError);
 }
 
-public  getEquipment(classs : String): Observable<Characters>{
+public getEquipment(classs : String): Observable<Characters>{
   return this.http.post(`${DND_URL}character/equipment`, classs).catch(this.handleError);
 }
 
