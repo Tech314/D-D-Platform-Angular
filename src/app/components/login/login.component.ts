@@ -27,7 +27,7 @@ export class LoginComponent {
     this.campaignService.loginCampaign(this.username,this.password)
     .subscribe(
       data => this.campaignData = data,
-      error => this.clientMessage.message = 'SOMETHING WENT WRONG.',
+      error => this.clientMessage.message = 'Invalid username or password',
       () => this.router.navigate(['/party'])
     );
   }
