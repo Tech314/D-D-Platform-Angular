@@ -1,28 +1,26 @@
 import { Component } from '@angular/core';
-
-import { HeroService } from '../../services/hero.service';
-import { Hero } from '../../models/hero.model';
 import { ClientMessage } from '../../models/client-message.model';
+import { CampaignService } from '../../services/campaign.service';
+import { Campaign } from '../../models/campaign.model';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
-export class RegisterComponent {
-    title = 'Register Hero';
+export class CreateCampaignComponent {
 
     //Constructor Injection
-    constructor(private heroService: HeroService) { }
+    constructor(private campaignService: CampaignService) { }
 
     //For data binding
-    public hero: Hero = new Hero(0,'','',false);
+    public campaign: Campaign = new Campaign(0,"","",null,null,null,null,null,null);
 
     //To message the user
     public clientMessage: ClientMessage = new ClientMessage('');
 
-    public registerHero(): void {
-      this.heroService.registerHero(this.hero)
+    public createCampaign(): void {
+      this.campaignService.registerCampaign(this.campaign)
       .subscribe(
         data => this.clientMessage = data,
         error => this.clientMessage.message = 'SOMETHING WENT WRONG.'

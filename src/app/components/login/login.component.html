@@ -1,0 +1,19 @@
+<div>
+  <div class="panel-heading">
+      <span class="label label-default label-center">Login to Campaign</span>
+  </div>
+  <div class="panel-body">
+  <div class="list-group">
+      <div class="list-group-item list-group-item-demo">
+             <div class="form-group">
+                  <input [(ngModel)]="username" placeholder="Campaign Name" class="form-control" />
+                  <input type=password [(ngModel)]="password" placeholder="Campaign Password" class="form-control" />
+             </div>
+             <div>
+                 <button class="btn btn-primary btn-center" (click)="onSubmit()">Login</button>
+             </div>
+             <div>
+                 {{ clientMessage.message }}
+             </div>
+      </div>
+  </div>

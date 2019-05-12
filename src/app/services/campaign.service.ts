@@ -23,6 +23,10 @@ export class CampaignService {
     return this.http.post(`${DND_URL}campaign/register`,campaign).catch(this.handleError);
   }
 
+  public loginCampaign(username:String,password:String): Observable<Campaign> {
+    return this.http.get(`${DND_URL}campaign/loginToCampaign?username=${username}&password=${password}`).catch(this.handleError);
+  }
+
   private handleError(error: Response){
     return Observable.throw(error.statusText);
   }
