@@ -6,6 +6,7 @@ import 'rxjs/Rx';
 import { DND_URL } from '../../environments/environment';
 import { Response } from '@angular/http';
 import 'rxjs/Observable';
+import { ClientMessage } from '../models/client-message.model';
 
 @Injectable()
 export class CharactersService {
@@ -20,8 +21,8 @@ export class CharactersService {
     return this.http.put(`${DND_URL}character/save`,character).catch(this.handleError);
   }
   
-  public createCharacter(character: Characters) : Observable<Characters> {
-    return this.http.post(`${DND_URL}chacter/create`,character).catch(this.handleError);
+  public createCharacter(character: Characters) : Observable<ClientMessage> {
+    return this.http.post(`${DND_URL}character/register`,character).catch(this.handleError);
   }
 
 public getRace(): Observable<Characters>{

@@ -87,6 +87,7 @@
                         <textarea [(ngModel)]="char1.skills"></textarea>
                     </div> 
                 </div> 
+                <button type="button" (click)="saveChar(char1)">Save Character</button>
             </div>
             <span *ngIf="!char1"><a routerLink="../character"><button type="button">Add Character</button></a></span>
         </div>
@@ -123,6 +124,7 @@
                         <textarea [(ngModel)]="char2.skills"></textarea>
                     </div> 
                 </div> 
+                <button type="button" (click)="saveChar(char2)">Save Character</button>
             </div>
             <span *ngIf="!char2"><a routerLink="../character"><button type="button">Add Character</button></a></span>
         </div>
@@ -159,6 +161,7 @@
                         <textarea [(ngModel)]="char3.skills"></textarea>
                     </div> 
                 </div> 
+                <button type="button" (click)="saveChar(char3)">Save Character</button>
             </div>
             <span *ngIf="!char3"><a routerLink="../character"><button type="button">Add Character</button></a></span>
         </div>
@@ -197,6 +200,7 @@
                             <textarea [(ngModel)]="char4.skills"></textarea>
                         </div> 
                     </div> 
+                    <button type="button" (click)="saveChar(char4)">Save Character</button>
                 </div>
             <span *ngIf="!char4"><a routerLink="../character"><button type="button">Add Character</button></a></span>
         </div>
@@ -233,6 +237,7 @@
                                 <textarea [(ngModel)]="char5.skills"></textarea>
                             </div> 
                         </div> 
+                        <button type="button" (click)="saveChar(char5)">Save Character</button>
                 </div>
             <span *ngIf="!char5"><a routerLink="../character"><button type="button">Add Character</button></a></span>
         </div>
@@ -268,7 +273,8 @@
                                 <strong>Skill/Spells</strong><br>
                                 <textarea [(ngModel)]="char6.skills"></textarea>
                             </div> 
-                        </div> 
+                        </div>
+                        <button type="button" (click)="saveChar(char6)">Save Character</button> 
                 </div>
             <span *ngIf="!char6"><a routerLink="../character"><button type="button">Add Character</button></a></span>
         </div>

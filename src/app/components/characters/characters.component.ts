@@ -3,7 +3,6 @@ import { CharactersService } from '../../services/characters.service';
 import { Characters } from '../../models/characters.model';
 import { ClientMessage } from '../../models/client-message.model';
 import { Router } from '@angular/router';
-import { LoadedRouterConfig } from '@angular/router/src/config';
 
 @Component({
   selector: 'app-characters',
@@ -20,6 +19,7 @@ export class CharactersComponent {
   }
 
   public clientMessage: ClientMessage = new ClientMessage('');
+  public savedCharacter: ClientMessage = new ClientMessage('');
   
   public character: Characters = new Characters(0,"",0,0,"","","","","","","","","","","","","","");
   public race: String;
@@ -80,8 +80,11 @@ export class CharactersComponent {
   }
 
   public saveCharacter(): void {
-    this.characterService.createCharacter(this.character);
-    this.router.navigate(["party", {param:1}]);
+    this.characterService.createCharacter(this.character).subscribe(
+      data => this.savedCharacter = data,
+      error => this.clientMessage.message = error,
+      () => this.router.navigate(['/party'])
+    );
   }
 
   private getEquipment(): void{

@@ -3,10 +3,7 @@ export class Characters {
     charName: string;
     charLvl: number;
     charExp: number;
-<<<<<<< HEAD
-=======
     charRace: string;
->>>>>>> 65022ebe8bfad45fa986fd3c64a5cc10310c1383
     charClass: string;
     equipment: string;
     items: string;
@@ -23,11 +20,7 @@ export class Characters {
 
     constructor(charId: number, charName: string, charLvl: number, charExp: number, equipment: string,
         items: string,skills: string, traits: string, stats: string, str: string, dex: string, con: string, int: string,
-<<<<<<< HEAD
-        wis: string, cha: string, attackSpells: string, charClass: string){
-=======
         wis: string, cha: string, attackSpells: string, charRace: string, charClass: string){
->>>>>>> 65022ebe8bfad45fa986fd3c64a5cc10310c1383
         this.charId = charId;
         this.charName = charName;
         this.charLvl = charLvl;

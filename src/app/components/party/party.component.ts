@@ -62,6 +62,14 @@ export class PartyComponent implements OnInit {
               );
   }
 
+  public saveChar(charToSave: Characters): void {
+    this.charactersService.saveCharacter(charToSave)
+              .subscribe(
+                data => this.char = data,
+                error => this.clientMessage.message = error
+              );
+  }
+
   private getCharacters(): void {
     this.char.charId = this.campaign.char1;
     this.charactersService.findCharacter(this.char)
