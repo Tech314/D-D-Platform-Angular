@@ -16,11 +16,15 @@ export class CampaignService {
   }
 
   public findCampaign(campaign:Campaign): Observable<Campaign> {
-    return this.http.post(`${DND_URL}campaign/find`,campaign).catch(this.handleError);
+    return this.http.get(`${DND_URL}campaign/find`).catch(this.handleError);
   }
 
   public registerCampaign(campaign:Campaign): Observable<ClientMessage> {
     return this.http.post(`${DND_URL}campaign/register`,campaign).catch(this.handleError);
+  }
+
+  public loginCampaign(username:String,password:String): Observable<Campaign> {
+    return this.http.get(`${DND_URL}campaign/loginToCampaign?username=${username}&password=${password}`).catch(this.handleError);
   }
 
   private handleError(error: Response){

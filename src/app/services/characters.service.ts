@@ -13,7 +13,15 @@ export class CharactersService {
   constructor(private http: HttpClient) { }
 
   public findCharacter(character: Characters) : Observable<Characters> {
-    return this.http.post(`${DND_URL}character/find`,character).catch(this.handleError);
+    return this.http.post(`${DND_URL}character/findCharacter`,character).catch(this.handleError);
+  }
+
+  public saveCharacter(character: Characters) : Observable<Characters> {
+    return this.http.put(`${DND_URL}character/save`,character).catch(this.handleError);
+  }
+  
+  public createCharacter(character: Characters) : Observable<Characters> {
+    return this.http.post(`${DND_URL}chacter/create`,character).catch(this.handleError);
   }
 
 public getRace(): Observable<Characters>{
